@@ -14,3 +14,5 @@
 
 **Import**
     > `import thumb from './background-image.png'` rather than `src={require('./background-image.png')}`
+
+

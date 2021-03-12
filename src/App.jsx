@@ -1,4 +1,7 @@
 import React from 'react';
+import 'react-redux';
+import 'redux'
+import 'redux-saga'
 import 'App.scss'
 import Nav from './Navigation'
 import thumb from './background-image.png'
