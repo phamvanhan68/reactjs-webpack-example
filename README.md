@@ -12,5 +12,8 @@
 
     **Note**: this will effect the hot reload. (probably a bug of webpack)
 
+    **Workaround**:
+        Add target: 'web' inside webpack.config.js
+
 ## postcss-loader and sass-loader
     sass-loader should be put at the end of array as recomendation of docs
