@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --hot --open",
-    "build": "webpack --config webpack.config.js --mode=production"
+    "start-prod": "NODE_ENV=production webpack serve --hot --open",
+    "build-prod": "rm -rf dist/ & NODE_ENV=production webpack",
+    "build": "rm -rf dist/ & webpack"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +20,10 @@
     "css-loader": "^5.1.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.0",
+    "mini-css-extract-plugin": "^1.3.9",
+    "postcss": "^8.2.8",
+    "postcss-loader": "^5.2.0",
+    "postcss-preset-env": "^6.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.32.8",

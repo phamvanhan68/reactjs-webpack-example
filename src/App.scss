@@ -1,3 +1,10 @@
+:root {
+    --bg: green;
+}
+
 .color {
-    color: blue;
+    color: var(--bg);
+    border-image-repeat: space;
+    transform: skewY(0deg);
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2.5em), 0% 100%);
 }
