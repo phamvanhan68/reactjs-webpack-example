@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require('webpack');
@@ -21,13 +22,18 @@ if (process.env.NODE_ENV === "production") {
   // target = "browserslist";
 }
 
+let mode = 'development';
+let target = 'web';
+
+if (process.env.NODE_ENV === 'production') {
+  mode = 'production';
+  target = "browserslist";
+}
+
 module.exports = {
   mode: mode,
-  // target: target,
-  entry: {
-    bundle: "./src/index.js",
-    vendor: VENDOR_LIBS
-  },
+  target:target,
+  entry: "./src/index.js",
   output: {
     filename: "[name].[fullhash].js",
     path: path.resolve(__dirname, "dist"),
@@ -36,7 +42,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-    new MiniCssExtractPlugin() 
+    new MiniCssExtractPlugin(),
+    
   ],
   resolve: {
     modules: [__dirname, "src", "node_modules"],
@@ -52,10 +59,9 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          MiniCssExtractPlugin.loader, 
+          MiniCssExtractPlugin.loader,
           "css-loader",
-          "postcss-loader", 
-          // sass-loader should be put at the end of array as recomendation of docs
+          "postcss-loader",
           "sass-loader"
         ],
       },
