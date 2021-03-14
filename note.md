@@ -11,6 +11,7 @@
         
 **Image**
     > npm install file-loader
+    > Since webpack version 5 already have asset module inside, we don't need to use this `file-loader` any more
 
 **Import**
     > `import thumb from './background-image.png'` rather than `src={require('./background-image.png')}`

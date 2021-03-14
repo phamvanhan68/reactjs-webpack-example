@@ -1,5 +1,5 @@
 :root {
-    --bg: green;
+    --bg: blue;
 }
 
 .color {
@@ -7,4 +7,5 @@
     border-image-repeat: space;
     transform: skewY(0deg);
     clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2.5em), 0% 100%);
+    background-image: url('./images/background-image.png');
 }
